@@ -22,7 +22,9 @@ Your task:
 3. For each recommendation:
    - Give it a match score (0.0 to 1.0)
    - Explain WHY it fits this specific person
-   - Keep reasoning under 30 words
+   - Keep reasoning under 30 words but make it 
+  explicitly reference something from the persona. 
+  Why does THIS specific person care about this item?
 
 COLD START RULE:
 If the persona is empty or very vague, do not guess randomly.
