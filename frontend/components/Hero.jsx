@@ -90,12 +90,12 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6">
         {phase < 2 ? (
-          <h1 className="text-6xl md:text-7xl font-light tracking-tight text-white min-h-32">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-white min-h-32">
             {displayText}
             <span className="animate-pulse">|</span>
           </h1>
         ) : (
-          <h1 className="text-6xl md:text-7xl font-light tracking-tight min-h-32">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight min-h-32">
             {displayText}
             <span className="animate-pulse">|</span>
             <style>{`
@@ -112,16 +112,16 @@ export default function Hero() {
         )}
 
         {phase === 2 && (
-          <div className="mt-8 flex gap-4 animate-fadeIn">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fadeIn w-full sm:w-auto px-4 sm:px-0">
             <button
               onClick={() => navigate("/task-a")}
-              className="px-8 py-3 bg-white text-black text-sm font-medium rounded-lg hover:bg-white/70 cursor-pointer transition duration-200"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-black text-xs sm:text-sm font-medium rounded-lg hover:bg-white/70 cursor-pointer transition duration-200"
             >
               Predict Rating
             </button>
             <button
               onClick={() => navigate("/task-b")}
-              className="px-8 py-3 border border-white text-white text-sm font-medium rounded-lg cursor-pointer hover:bg-white/5 transition duration-200"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 border border-white text-white text-xs sm:text-sm font-medium rounded-lg cursor-pointer hover:bg-white/5 transition duration-200"
             >
               Find Audience
             </button>
