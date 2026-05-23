@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-800 pt-8">
           <p className="text-gray-600 text-sm text-center">
-            © 2026 ProjectResonance. Built by Team Squadnovate.
+            © 2026 Resonance. Built by Team Nexus.
           </p>
         </div>
       </div>
