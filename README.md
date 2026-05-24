@@ -45,7 +45,7 @@ Since Resonance runs two AI agents, how it works can be categorized into two.
 VITE_API_URL="https://projectresonace.onrender.com"
 
 #### Backend  
-GROK_API_KEY
+GROK_API_KEY  
 GROK_MODEL
 
 ## Demo  
@@ -54,3 +54,12 @@ GROK_MODEL
 3. Choose either of the two operations you want to perform at the moment: 'Predict Rating' or 'Find Audience'.  
 4. If 'Predict Rating' is picked, input user persona and product description as required and click 'Get Prediction'.
 5. If 'Find Audience' is picked, input your persona as required and click 'Get Recommendation' to get your result.
+
+## Team
+
+|   Member   |    Role    |
+| ---------- | ---------- |
+|  Goodness  |            |
+|  Emmanuel  |            |
+|  David     |            |
+|  Semilore  |            |
