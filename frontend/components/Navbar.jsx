@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Radar, Menu, X } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavClick = (path) => {
     navigate(path);
+    setMenuOpen(false);
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    navigate("/");
     setMenuOpen(false);
   };
 
@@ -38,18 +46,32 @@ export default function Navbar() {
 
         {/* AUTH BUTTONS - Far right (DESKTOP ONLY) */}
         <div className="hidden md:flex items-center gap-4 border-l border-gray-700 pl-4 flex-shrink-0">
-          <button
-            onClick={() => handleNavClick("/login")}
-            className="px-4 py-1.5 text-xs text-gray-300 hover:text-white hover:bg-white/5 transition rounded-lg"
-          >
-            Log in
-          </button>
-          <button
-            onClick={() => handleNavClick("/signup")}
-            className="px-4 py-1.5 text-xs text-black font-medium bg-white rounded-lg hover:bg-gray-100 transition"
-          >
-            Sign up
-          </button>
+          {user ? (
+            <>
+              <span className="text-xs text-gray-400">{user.email}</span>
+              <button
+                onClick={handleLogout}
+                className="px-4 py-1.5 text-xs text-gray-300 hover:text-white hover:bg-white/5 transition rounded-lg"
+              >
+                Log out
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => handleNavClick("/login")}
+                className="px-4 py-1.5 text-xs text-gray-300 hover:text-white hover:bg-white/5 transition rounded-lg"
+              >
+                Log in
+              </button>
+              <button
+                onClick={() => handleNavClick("/signup")}
+                className="px-4 py-1.5 text-xs text-black font-medium bg-white rounded-lg hover:bg-gray-100 transition"
+              >
+                Sign up
+              </button>
+            </>
+          )}
         </div>
 
         {/* HAMBURGER MENU (MOBILE ONLY) */}
@@ -83,18 +105,34 @@ export default function Navbar() {
           />
 
           <div className="border-t border-gray-800 pt-3 space-y-2">
-            <button
-              onClick={() => handleNavClick("/login")}
-              className="block w-full text-left px-3 py-2 text-xs text-gray-300 hover:text-white hover:bg-white/5 rounded transition"
-            >
-              Log in
-            </button>
-            <button
-              onClick={() => handleNavClick("/signup")}
-              className="block w-full text-left px-3 py-2 text-xs text-black font-medium bg-white rounded hover:bg-gray-100 transition"
-            >
-              Sign up
-            </button>
+            {user ? (
+              <>
+                <div className="px-3 py-2 text-xs text-gray-400">
+                  {user.email}
+                </div>
+                <button
+                  onClick={handleLogout}
+                  className="block w-full text-left px-3 py-2 text-xs text-gray-300 hover:text-white hover:bg-white/5 rounded transition"
+                >
+                  Log out
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => handleNavClick("/login")}
+                  className="block w-full text-left px-3 py-2 text-xs text-gray-300 hover:text-white hover:bg-white/5 rounded transition"
+                >
+                  Log in
+                </button>
+                <button
+                  onClick={() => handleNavClick("/signup")}
+                  className="block w-full text-left px-3 py-2 text-xs text-black font-medium bg-white rounded hover:bg-gray-100 transition"
+                >
+                  Sign up
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}
