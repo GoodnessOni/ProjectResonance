@@ -31,6 +31,13 @@ Since Resonance runs two AI agents, how it works can be categorized into two.
 + Styling: Tailwind CSS 4.3.0  
 + UI Icons: Lucide React 1.16.0  
 + Linting: ESLint 10.3.0
++ React 18 + Vite (fast dev server)
++ Tailwind CSS (styling, dark mode)
++ Firebase Auth (email/password + Google sign-in)
++ Firestore (prediction history persistence)
++ React Router (client-side routing)
++ Lucide Icons (lightweight SVG icons)
+
 
 ### Backend Stack 
 + Framework: FastAPI  
@@ -70,7 +77,7 @@ GROK_MODEL
 4. If 'Predict Rating' is picked, input user persona and product description as required and click 'Get Prediction'.
 5. If 'Find Audience' is picked, input your persona as required and click 'Get Recommendation' to get your result.
 
-## Team
+## The Team
 
 |   Member   |    Role    |
 | ---------- | ---------- |
@@ -78,3 +85,12 @@ GROK_MODEL
 |  Emmanuel  | Backend Developer           |
 |  David     | Frontend Developer           |
 |  Semilore  | Ass. Frontend Developer, Pitch Team lead           |
+
+## Judging Criteria Coverage  
+| Task A . User Modelling | Task B . Recommendation   | Points |
+|---------                |---------                  |--------|
+| Review Text Quality     | Ranking Quality           |   30   |
+|  Rating Accuracy        | Cold Start & Cross-Domain |   25   |
+| Behavioural Fidelity    | Contextual Relevance      |   20   |
+| Solution Paper          | Solution Paper            |   15   |
+| Code Reproducibility    | Code Reproducibility      |   10   |
