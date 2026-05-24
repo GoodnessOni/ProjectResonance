@@ -37,4 +37,16 @@ AI Integration: Groq API
 Environment Management: python-dotenv  
 Language: Python
 
-## Environmental Variable
+## Environmental Variables
+#### Frontend  
+VITE_API_URL="https://projectresonace.onrender.com"
+
+#### Backend  
+GROK_API_KEY
+GROK_MODEL
+
+## Demo  
+Visit https://project-resonance.vercel.app  
+Click 'signup' if new or 'login' if returning  
+Choose either of the two operations you want to perform at the moment: 'Predict Rating' or 'Find Audience'  
+If 'Predict Rating' is picked, input user persona and product description and click 'Get Prediction'.
