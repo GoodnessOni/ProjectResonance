@@ -21,5 +21,20 @@ Input: persona + product. Output: predicted rating (1-5), simulated review in th
 *Agent's Operation*: This Resonance's agent goes through the product description and identifies which Nigerian audience segments would genuinely care. Input: project description. Output: ranked list of 5 audience segments with match scores, sizes, and reasons.
 
 ## Tech Stack  
-### Frontend  
-### Backend
+### Frontend Stack  
+Framework: React 19.2.6  
+Build Tool: Vite 8.0.12  
+Routing: React Router DOM 7.15.1  
+Styling: Tailwind CSS 4.3.0  
+UI Icons: Lucide React 1.16.0  
+Linting: ESLint 10.3.0
+
+### Backend Stack 
+Framework: FastAPI  
+Server: Uvicorn  
+Validation: Pydantic  
+AI Integration: Groq API  
+Environment Management: python-dotenv  
+Language: Python
+
+## Environmental Variable
