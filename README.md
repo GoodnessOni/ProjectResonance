@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# ProjectResonance
-=======
 # Resonance
 A rating & review infrastructure for Nigerian developers built in participation for the DSN * BCT LLM Agent Challenge.  
 **Live Demo**: https://project-resonance.vercel.app
@@ -43,6 +40,16 @@ Since Resonance runs two AI agents, how it works can be categorized into two.
 + Environment Management: python-dotenv  
 + Language: Python
 
+## Running Locally
+#### Prerequisites  
+- Node.js 18+
+- npm
+
+#### Installation  
+- bash
+- cd frontend
+- npm install
+
 ## Environmental Variables
 #### Frontend  
 VITE_API_URL="https://projectresonace.onrender.com"
@@ -62,8 +69,7 @@ GROK_MODEL
 
 |   Member   |    Role    |
 | ---------- | ---------- |
-|  Goodness  |            |
-|  Emmanuel  |            |
-|  David     |            |
-|  Semilore  |            |
->>>>>>> d5bbb27929116e5d7f8dc933cf90ebad3e66b177
+|  Goodness  | Team Lead, Prompt Engineer|
+|  Emmanuel  | Backend Developer           |
+|  David     | Frontend Developer           |
+|  Semilore  | Ass. Frontend Developer, Pitch Team lead           |
