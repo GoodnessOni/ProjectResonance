@@ -51,13 +51,18 @@ Since Resonance runs two AI agents, how it works can be categorized into two.
 - npm install
 
 ## Environmental Variables
-#### Frontend  
-VITE_API_URL="https://projectresonace.onrender.com"
-
-#### Backend  
+#### Frontend `.env` 
+```
+VITE_API_URL="https://projectresonace.onrender.com" 
+VITE_FIREBASE_API_KEY=<your-firebase-key>   
+VITE_FIREBASE_AUTH_DOMAIN=<your-firebase-domain>  
+VITE_FIREBASE_PROJECT_ID=<your-firebase-id>  
+```
+#### Backend `.env`  
+```
 GROK_API_KEY  
 GROK_MODEL
-
+```
 ## Demo  
 1. Visit https://project-resonance.vercel.app.  
 2. Click 'signup' if new or 'login' if returning.  
