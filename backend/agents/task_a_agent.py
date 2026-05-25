@@ -9,7 +9,10 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 MODEL = os.getenv("GROQ_MODEL")
 
 def load_prompt():
-    prompt_path = os.path.join(os.path.dirname(__file__), "../prompts/task_a_prompt.txt")
+    prompt_path = os.path.join(
+        os.path.dirname(__file__), 
+        "../prompts/task_a_prompt.txt"
+    )
     with open(prompt_path, "r") as f:
         return f.read()
 
@@ -25,7 +28,7 @@ def run_task_a(persona: str, product: str):
         messages=[
             {
                 "role": "system",
-                "content": "You are a helpful assistant. You always respond with valid JSON only. No markdown. No explanation. No code blocks. Just raw JSON."
+                "content": "You are a helpful assistant. You always respond with valid JSON only. No markdown. No explanation. No code blocks. Just raw JSON. Ensure all factor weights sum to exactly 100."
             },
             {
                 "role": "user",
@@ -47,4 +50,18 @@ def run_task_a(persona: str, product: str):
 
     # Parse JSON
     result = json.loads(raw)
+
+    # Validate weights sum to 100
+    if "reasoning" in result and "key_factors" in result["reasoning"]:
+        total_weight = sum(
+            f.get("weight", 0) 
+            for f in result["reasoning"]["key_factors"]
+        )
+        if total_weight != 100:
+            # Normalize weights if they don't sum to 100
+            for factor in result["reasoning"]["key_factors"]:
+                factor["weight"] = round(
+                    factor["weight"] * 100 / total_weight
+                )
+
     return result
