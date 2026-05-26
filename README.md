@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# ProjectResonance
-=======
 # Resonance
 A rating & review infrastructure for Nigerian developers built in participation for the DSN * BCT LLM Agent Challenge.  
 **Live Demo**: https://project-resonance.vercel.app
@@ -34,6 +31,13 @@ Since Resonance runs two AI agents, how it works can be categorized into two.
 + Styling: Tailwind CSS 4.3.0  
 + UI Icons: Lucide React 1.16.0  
 + Linting: ESLint 10.3.0
++ React 18 + Vite (fast dev server)
++ Tailwind CSS (styling, dark mode)
++ Firebase Auth (email/password + Google sign-in)
++ Firestore (prediction history persistence)
++ React Router (client-side routing)
++ Lucide Icons (lightweight SVG icons)
+
 
 ### Backend Stack 
 + Framework: FastAPI  
@@ -43,14 +47,29 @@ Since Resonance runs two AI agents, how it works can be categorized into two.
 + Environment Management: python-dotenv  
 + Language: Python
 
-## Environmental Variables
-#### Frontend  
-VITE_API_URL="https://projectresonace.onrender.com"
+## Running Locally
+#### Prerequisites  
+- Node.js 18+
+- npm
 
-#### Backend  
+#### Installation  
+- bash
+- cd frontend
+- npm install
+
+## Environmental Variables
+#### Frontend `.env` 
+```
+VITE_API_URL="https://projectresonace.onrender.com" 
+VITE_FIREBASE_API_KEY=<your-firebase-key>   
+VITE_FIREBASE_AUTH_DOMAIN=<your-firebase-domain>  
+VITE_FIREBASE_PROJECT_ID=<your-firebase-id>  
+```
+#### Backend `.env`  
+```
 GROK_API_KEY  
 GROK_MODEL
-
+```
 ## Demo  
 1. Visit https://project-resonance.vercel.app.  
 2. Click 'signup' if new or 'login' if returning.  
@@ -58,12 +77,20 @@ GROK_MODEL
 4. If 'Predict Rating' is picked, input user persona and product description as required and click 'Get Prediction'.
 5. If 'Find Audience' is picked, input your persona as required and click 'Get Recommendation' to get your result.
 
-## Team
+## The Team
 
 |   Member   |    Role    |
 | ---------- | ---------- |
-|  Goodness  |            |
-|  Emmanuel  |            |
-|  David     |            |
-|  Semilore  |            |
->>>>>>> d5bbb27929116e5d7f8dc933cf90ebad3e66b177
+|  Goodness  | Team Lead, Prompt Engineer|
+|  Emmanuel  | Backend Developer           |
+|  David     | Frontend Developer           |
+|  Semilore  | Ass. Frontend Developer, Pitch Team lead           |
+
+## Judging Criteria Coverage  
+| Task A . User Modelling | Task B . Recommendation   | Points |
+|---------                |---------                  |--------|
+| Review Text Quality     | Ranking Quality           |   30   |
+|  Rating Accuracy        | Cold Start & Cross-Domain |   25   |
+| Behavioural Fidelity    | Contextual Relevance      |   20   |
+| Solution Paper          | Solution Paper            |   15   |
+| Code Reproducibility    | Code Reproducibility      |   10   |

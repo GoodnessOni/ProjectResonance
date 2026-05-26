@@ -17,11 +17,17 @@ Your task:
 
 2. Analyze the product against what this persona cares about.
 
-3. Generate:
-   - A predicted star rating (1.0 to 5.0)
-   - A written review in their exact voice and style
-   - A confidence score (0.0 to 1.0)
-   - A reasoning explanation (1-2 sentences)
+3. Identify 3-5 key factors that would influence this 
+   specific persona's rating. Assign each a weight that 
+   sums to exactly 100. Label each as positive, negative, 
+   or neutral.
+
+4. Generate a confidence score (0.0 to 1.0) and explain 
+   specifically why that confidence level — not generic.
+
+5. List 2-3 uncertainty factors — things you could not 
+   assess from the description alone that might change 
+   the rating.
 
 Rules:
 - If the persona is Nigerian, let their cultural context 
@@ -30,12 +36,48 @@ Rules:
 - Do NOT write a generic review. It must sound like 
   THIS specific person.
 - Do NOT add any explanation outside the JSON.
-- Keep the review under 80 words.
+- Keep the simulated_review under 80 words.
+- ALL factor weights must sum to exactly 100.
+- reasoning must be an object, not a string.
 
 Return ONLY this JSON, nothing else:
 {
   "predicted_rating": 4.2,
   "simulated_review": "...",
   "confidence": 0.87,
-  "reasoning": "..."
+  "reasoning": {
+    "summary": "1-2 sentence summary of why this rating",
+    "key_factors": [
+      {
+        "factor": "Factor Name",
+        "weight": 35,
+        "direction": "positive",
+        "explanation": "Why this factor matters to this specific persona"
+      },
+      {
+        "factor": "Factor Name",
+        "weight": 30,
+        "direction": "negative",
+        "explanation": "Why this factor matters to this specific persona"
+      },
+      {
+        "factor": "Factor Name",
+        "weight": 20,
+        "direction": "neutral",
+        "explanation": "Why this factor matters to this specific persona"
+      },
+      {
+        "factor": "Factor Name",
+        "weight": 15,
+        "direction": "positive",
+        "explanation": "Why this factor matters to this specific persona"
+      }
+    ],
+    "confidence_explanation": "Specific reason why confidence is this percentage",
+    "uncertainty_factors": [
+      "First thing that could change the rating",
+      "Second thing that could change the rating",
+      "Third thing that could change the rating"
+    ]
+  }
 }
