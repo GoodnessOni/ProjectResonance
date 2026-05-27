@@ -60,7 +60,7 @@ Since Resonance runs two AI agents, how it works can be categorized into two.
 ## Environmental Variables
 #### Frontend `.env` 
 ```
-VITE_API_URL="https://projectresonace.onrender.com" 
+VITE_API_URL="https://projectresonance-rlw2.onrender.com" 
 VITE_FIREBASE_API_KEY=<your-firebase-key>   
 VITE_FIREBASE_AUTH_DOMAIN=<your-firebase-domain>  
 VITE_FIREBASE_PROJECT_ID=<your-firebase-id>  
